@@ -1,0 +1,24 @@
+<div class="project-container">
+  <div class="project-card" *ngFor="let prjct of projectList" (click)="showProjectDetails(prjct.id)">
+    <div class="project-inner-card">
+      <div class="project-card-header">
+        <span>{{ prjct.project }}</span>
+        <span class="spacer"></span>
+        <mat-icon>more_vert</mat-icon>
+      </div>
+      <div class="project-card-content" [ngClass]="{'active-project': selectedProjectId == prjct.id}">
+        <div class="content-row">
+          {{ prjct.formsubmitted }}
+          <span>Number of Forms</span>
+        </div>
+        <div class="content-row">
+          {{ prjct.total }}
+          <div class="proPictureContainer" *ngFor="let profile of prjct.profile; let proIndex = index;" [ngClass]="{'overlapImage': proIndex != 0}">
+            <img [src]="profile.imageURL" />
+          </div>
+          <div class="proPictureContainer overlapImage">+{{ prjct.count }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

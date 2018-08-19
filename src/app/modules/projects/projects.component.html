@@ -1,0 +1,93 @@
+<div style="padding: 0 20px 5px">
+    <app-project-card *ngIf="serviceData && serviceData.data" [projectList]="serviceData.data" (showProjectDetailsEvent)="showProjectDetails($event)"></app-project-card>
+    <a class="link">view all projects</a>
+</div>
+<mat-divider></mat-divider>
+<div *ngIf="selectedProject && selectedProject.project" class="project-details-container">
+    <div class="project-details-header">
+        <button mat-stroked-button class="pull-right">+ ADD TO GROUP</button>
+        <h4>{{selectedProject.project}}</h4>
+        <span>Last Updated: {{selectedProject.lastupdated}}</span>
+    </div>
+    <div class="project-details-content">
+        Created On: {{selectedProject.createdon}}
+        <br/> {{selectedProject.description}}
+    </div>
+    <div class="project-details-footer">
+        View More...
+    </div>
+</div>
+
+<div class="form-user-container">
+
+    <mat-tab-group>
+        <mat-tab label="Forms">
+            <div style="padding: 10px 0;">
+                <button mat-stroked-button class="pull-right" style="margin-top: 12px;">ADD NEW FORM TO PROJECT
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+                <mat-form-field>
+                    <mat-icon matPrefix>search</mat-icon>
+                    <input type="text" matInput placeholder="Search Forms Here..." />
+                </mat-form-field>
+            </div>
+            <div style="padding-bottom: 10px;">
+                <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
+                    Select All </mat-checkbox>
+                <button mat-button>
+                    <mat-icon>refresh</mat-icon> Refresh
+                </button>
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon>filter_list</mat-icon> Filter
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Filter 1</button>
+                    <button mat-menu-item>Filter 2</button>
+                </mat-menu>
+                <a class="link pull-right">View All</a>
+            </div>
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!-- Checkbox Column -->
+                <ng-container matColumnDef="select">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let row">
+                        <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+                        </mat-checkbox>
+                    </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="weight">
+                    <th mat-header-cell *matHeaderCellDef> Weight </th>
+                    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="symbol">
+                    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                </tr>
+            </table>
+
+
+
+
+
+
+        </mat-tab>
+        <mat-tab label="Users"> Users </mat-tab>
+    </mat-tab-group>
+</div>

@@ -1,0 +1,28 @@
+<mat-toolbar>
+  <h4>PROJECTS
+    <span>(1017)</span>
+  </h4>
+
+  <span class="spacer"></span>
+
+  <button mat-button>
+    <mat-icon>refresh</mat-icon> Refresh
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>filter_list</mat-icon> Filter
+    <mat-icon>expand_more</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Filter 1</button>
+    <button mat-menu-item>Filter 2</button>
+  </mat-menu>
+
+  <mat-form-field>
+    <mat-icon matPrefix>search</mat-icon>
+    <input type="text" matInput placeholder="Search Projects Here..." />
+  </mat-form-field>
+
+  <button mat-stroked-button>CREATE NEW PROJECT</button>
+
+</mat-toolbar>

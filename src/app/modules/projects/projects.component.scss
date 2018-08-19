@@ -1,0 +1,49 @@
+.link {
+    color: #3e86b0;
+    text-decoration: underline;
+    padding-left: 40px;
+    line-height: 36px;
+}
+
+.project-details-container {
+    margin: 15px 40px 15px 60px;
+    border-bottom: 4px solid #eef3f7;
+    padding-bottom: 15px;
+    .project-details-header {
+        h4 {
+            margin: 0;
+            line-height: 12px;
+        }
+        span {
+            font-size: 9px;
+            font-weight: 700;
+        }
+        .mat-stroked-button {
+            float: right;
+        }
+    }
+    .project-details-content {
+        font-size: 11px;
+        line-height: 16px;
+        padding: 8px 0;
+    }
+    .project-details-footer {
+        font-size: 11px;
+        color: #3e86b0;
+        font-weight: 700;
+    }
+}
+
+.form-user-container {
+    padding: 10px 215px 0px 75px;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-checkbox {
+    font-size: 14px;
+    line-height: 14px;
+    opacity: 0.4;
+}

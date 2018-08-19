@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.mat-stroked-button {
+    border: 1px solid #3e86b0;
+    color: #3e86b0;
+    font-size: 12px;
+    mat-icon {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+.mat-form-field {
+    font-size: 14px;
+    opacity: 0.4;
+    width: 165px;
+    padding-right: 40px;
+    mat-icon {
+        font-size: 14px !important;
+        line-height: 24px !important;
+    }
+}
+
+.mat-button {
+    font-size: 14px;
+    line-height: 14px;
+    opacity: 0.4;
+    mat-icon {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+.mat-tab-label {
+    padding: 0px !important;
+    min-width: 70px !important;
+}
+
+.mat-tab-label-active {
+    color: #3f51b5;
+    font-weight: 900;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar {
+    background-color: #3f51b5;
+}
+
+.mat-ink-bar {
+    height: 3px !important;
+}
+
+.pull-right {
+    float: right;
+}
+
+tr.mat-header-row {
+    height: 30px !important;
+    background: #eef3f7;
+}
+tr.mat-row {
+    height: 34px !important;
+}
+th.mat-header-cell {
+    font-weight: 800;
+}
+
+.mat-tab-body-content {
+    overflow: hidden !important;
+}

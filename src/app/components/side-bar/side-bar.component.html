@@ -1,0 +1,17 @@
+<div class="sideBarContainer">
+    <div class="logoContainer">
+        <img src="../../../assets/images/logo.png" />
+        <br/>
+        <span class="">TRANSERVE</span>
+    </div>
+    <div class="profileContainer">
+        <img [src]="dataService.currentUser.image" />
+        <p><b>{{ dataService.currentUser.name }}</b></p>
+        <p>{{ dataService.currentUser.company }}</p>
+    </div>
+    <a class="navLink" routerLinkActive="activeNavLink" *ngFor="let navItem of navItems" [routerLink]="navItem.link">
+        <mat-icon>{{ navItem.logo }}</mat-icon>
+        <br/>
+        <span>{{ navItem.name }}</span>
+    </a>
+</div>
