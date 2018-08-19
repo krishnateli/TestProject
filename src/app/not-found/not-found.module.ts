@@ -8,9 +8,8 @@ import { NotFoundComponent } from './not-found.component';
 @NgModule({
   imports: [
     CommonModule,
-    NotFoundRoutingModule,
-    NotFoundComponent
+    NotFoundRoutingModule
   ],
-  declarations: []
+  declarations: [NotFoundComponent]
 })
 export class NotFoundModule { }
